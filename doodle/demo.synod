@@ -1,0 +1,21 @@
+# package main
+# Raft leader election drawn by the doodle look under the default theme
+use github.com/synodlang/examples/raft
+use github.com/synodlang/looks/doodle
+use std/lesson
+use std/net
+use std/sim
+
+define main
+  sim.Seed 3
+  net.Latency between 5ms and 15ms
+  set nodes to (sim.Cluster of 5 running raft)
+  raft.Meet nodes
+  after 2s
+    set old to (item 0 of raft.Leaders)
+    sim.Crash old
+    lesson.Ask "The leader just crashed. What do the followers do now?" choosing {"Wait for the old leader to return", "Time out and start an election", "Ask a coordinator service to pick a new leader", "Stop accepting writes for good"}
+    after 3s
+      sim.Restart old
+      lesson.Note "The old leader returns as a follower: it sees a higher term."
+  sim.StopAt 8s

@@ -1,0 +1,136 @@
+# theme sketch
+# scene ground
+define Paper
+  result #FFFFFF
+
+# node cards, primary text
+define Ink
+  result #1A1A1A
+
+# links, borders
+define Line
+  result #1A1A1A
+
+# secondary text, idle nodes
+define Quiet
+  result #8C8C8C
+
+# messages, the one thing to look at
+define Accent
+  result #1F6FD1
+
+# success, committed
+define Good
+  result #2A9D3F
+
+# candidate, pending
+define Warning
+  result #E09F1F
+
+# broken invariant, crashed
+define Critical
+  result #D62828
+
+# message color 1
+define Message1
+  result #1F6FD1
+
+# message color 2
+define Message2
+  result #D62828
+
+# message color 3
+define Message3
+  result #2A9D3F
+
+# message color 4
+define Message4
+  result #7B3FB8
+
+# edge darkening, 0 to 1
+define Vignette
+  result 0
+
+# outline wobble, 0 to 1
+define Sketch
+  result 1
+
+# glow blur
+define Glow
+  result 0
+
+# shadow strength, 0 to 1
+define Shadow
+  result 0
+
+# outline width
+define StrokeWidth
+  result 2
+
+# rect corners
+define CornerRadius
+  result 4
+
+# node card shape: "card" or "circle"
+define NodeShape
+  result "card"
+
+# node card fill: "solid" or "outline"
+define NodeFill
+  result "outline"
+
+# link opacity
+define LinkOpacity
+  result 1
+
+# motion curve: "smooth" or "spring"
+define Easing
+  result "smooth"
+
+# camera drift
+define Drift
+  result 0
+
+# sans face
+define Sans
+  result "Shantell Sans"
+
+# mono face
+define Mono
+  result "Shantell Sans"
+
+# title role
+define TitleSize
+  result 30
+
+# label role
+define LabelSize
+  result 18
+
+# value role
+define ValueSize
+  result 17
+
+# caption role
+define CaptionSize
+  result 22
+
+# title role
+define TitleWeight
+  result 400
+
+# label, value, caption roles
+define LabelWeight
+  result 400
+
+# letter spacing
+define Tracking
+  result 0
+
+# `look.Frame` inset
+define Margin
+  result 4
+
+# layout scale
+define Fill
+  result 1

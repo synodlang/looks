@@ -1,0 +1,61 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  text:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Check line endings, trailing spaces and final newline
+        shell: bash
+        run: |
+          status=0
+          count=0
+          while IFS= read -r -d '' f; do
+            [ -f "$f" ] || continue
+            count=$((count + 1))
+            if grep -q $'\r' "$f"; then
+              echo "::error file=$f::CRLF line endings"
+              status=1
+            fi
+            if grep -qE '[[:space:]]+$' "$f"; then
+              echo "::error file=$f::trailing whitespace"
+              status=1
+            fi
+            if [ -n "$(tail -c 1 "$f")" ]; then
+              echo "::error file=$f::missing newline at end of file"
+              status=1
+            fi
+          done < <(git ls-files -z -- '*.md' '*.yml' '*.mod' '*.env' '*.sh' '*.synod')
+          echo "Checked $count file(s)."
+          exit $status
+
+  synod:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Read the pins
+        run: cat versions.env >> "$GITHUB_ENV"
+      - name: Install the pinned synod
+        run: |
+          base="synod-${SYNOD_VERSION}-linux-amd64"
+          curl -fsSL -o "${RUNNER_TEMP}/${base}.tar.gz" \
+            "https://github.com/synodlang/compiler/releases/download/${SYNOD_VERSION}/${base}.tar.gz"
+          echo "${SYNOD_LINUX_AMD64_SHA256}  ${RUNNER_TEMP}/${base}.tar.gz" | sha256sum --check -
+          mkdir -p "${RUNNER_TEMP}/bin"
+          tar -xzf "${RUNNER_TEMP}/${base}.tar.gz" -C "${RUNNER_TEMP}/bin" synod
+          echo "${RUNNER_TEMP}/bin" >> "$GITHUB_PATH"
+      - name: Fetch the required modules
+        run: |
+          synod version
+          synod get
+      - name: Check, run every demo, compare the goldens and try every look and theme pair
+        run: scripts/check.sh
