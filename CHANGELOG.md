@@ -16,3 +16,4 @@ Implements Synod 0.3.
 - A runnable `demo.synod` in every package, drawing the `raft` example.
 - `scripts/check.sh`: formatting, `synod check`, every demo against the goldens in `testdata/`, and every look by theme pair with the traces compared.
 - CI that installs the pinned `synod` and runs the script.
+- `doodle`, `sketch` and `solarized-light` scenes: a change note beside a card at the right edge goes on the card's left (`look.Place … beside`) and stays on the canvas.
