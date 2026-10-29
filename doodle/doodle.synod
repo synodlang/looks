@@ -49,16 +49,20 @@ when (sim.Changed f of n from old to new)
   after 1200ms
     look.Remove note
 
-# A message is a little envelope with its type written above
+# A message is a little envelope; its type shows mid-flight, so tags that leave or land together never pile up
 when (net.Sent m from a to b)
   draw (look.Icon "mail") as mail for (net.Id m)
   look.Tween "scale" of mail to 0.625 over 0s
   draw (look.Label (net.Type m)) as tag
   look.Role tag as "caption"
   look.Place tag above mail
+  look.Tween "opacity" of tag to 0 over 0s
+  look.Tween "opacity" of tag to 1 over 120ms
   draw (look.Group {mail, tag}) as dot for (net.Id m)
   look.Bend dot by 0.25
   look.Flight dot from (card of a) to (card of b) for m
+  after 200ms
+    look.Fade tag to 0
 
 when (net.Arrived m from a to b)
   look.Remove (dot of (net.Id m))
@@ -106,7 +110,7 @@ when (disk.Written k on n)
 when (sim.Broken rule)
   draw (look.Label rule) as reason for "reason"
   look.Role reason as "caption"
-  look.Tween "y" of reason to 70 over 0s
+  look.Tween "y" of reason to 46 over 0s
   draw (look.Rect (8 times (text.Size rule)) by 2) as underline for "underline"
   look.Stroke underline with theme.Critical
   look.Dash underline on 6 off 4
@@ -121,7 +125,7 @@ when (sim.Broken rule)
 when (sim.Emitted lesson.Noted by origin)
   draw (look.Label lesson.Noted.Text) as note for "note"
   look.Role note as "caption"
-  look.Tween "y" of note to 930 over 0s
+  look.Tween "y" of note to 604 over 0s
 
 # Any other emitted event is named beside the node that emitted it
 when (sim.Emitted e by n)
