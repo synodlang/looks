@@ -2,9 +2,9 @@
 
 All notable changes to the Synod looks. Versions share MAJOR.MINOR with the language.
 
-## Unreleased
+## v0.3.0 — 2026-10-29
 
-Implements Synod 0.3.
+Implements Synod 0.3; works with compiler v0.3.0 and examples v0.3.0.
 
 ### Added
 
