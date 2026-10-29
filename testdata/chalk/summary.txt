@@ -1,7 +1,7 @@
 run github.com/synodlang/looks/chalk seed 3
 end: stop at 8s, 5 nodes, 1535 steps, 2197 events
 always:
-  holds          github.com/synodlang/examples@v0.2.1/raft/raft.synod:54: always LeadersAgree
+  holds          github.com/synodlang/examples@v0.3.0/raft/raft.synod:54: always LeadersAgree
 steps:
 @0s main
   sim.Started
