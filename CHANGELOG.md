@@ -10,6 +10,7 @@ Implements Synod 0.3.
 
 - Two looks: `lumen`, a generic look in the Manim/whiteboard-comic spirit of glowing particles on bent paths, effects and camera moves, and `doodle`, a thin minimal look of stick-figure nodes, envelopes and annotations.
 - Edge items (reasons, the lumen counter, foot notes) sit for the 1040 by 650 canvas; doodle shows an envelope's type only mid-flight so tags never pile up on a target.
+- The lesson note of `lumen` and `doodle` sits at the top band (`y` 40, before 604), where it cannot cover the bottom state rows; the reason of a broken rule sits at `y` 72 (before 46), so a note and a reason never overlap.
 - `lumen` draws no effect where a message arrives (a ripple ring stood round every card all the time and cut through the neighbours' state rows); the particle just ends.
 - Five themes: `solarized/light`, `solarized/dark`, `terminal`, `sketch` and `chalk`, each with all 34 theme names.
 - A runnable `demo.synod` in every package, drawing the `raft` example.

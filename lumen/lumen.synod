@@ -113,18 +113,18 @@ when (sim.Broken rule)
   look.Stroke alarm with theme.Critical
   draw (look.Label rule) as reason for "reason"
   look.Role reason as "caption"
-  look.Tween "y" of reason to 46 over 0s
+  look.Tween "y" of reason to 72 over 0s
   look.Effect "sweep" on alarm
   look.Reveal reason
   after 1800ms
     look.Remove alarm
     look.Remove reason
 
-# A lesson note writes itself at the foot of the scene
+# A lesson note writes itself at the top of the scene
 when (sim.Emitted lesson.Noted by origin)
   draw (look.Label lesson.Noted.Text) as note for "note"
   look.Role note as "caption"
-  look.Tween "y" of note to 604 over 0s
+  look.Tween "y" of note to 40 over 0s
   look.Reveal note
 
 # Any other emitted event circles the card of the node that emitted it

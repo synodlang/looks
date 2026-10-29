@@ -1231,7 +1231,7 @@
 {"id":"s1e8dd3b6ce9c","kind":"icon","props":{"size":32},"keys":[{"at":103822,"x":0,"y":0,"scale":0.625,"opacity":1,"stroke":"Ink","icon":"mail"}],"end":104552},
 {"id":"s1f8dd3b6d04f","kind":"label","props":{},"keys":[{"at":103822,"x":0,"y":-33,"opacity":0,"fill":"Ink","text":"Heartbeat","role":"caption"},{"at":103942,"opacity":1},{"at":104022,"opacity":1},{"at":104322,"opacity":0}],"end":104552},
 {"id":"s208dd3b6d202","kind":"group","msg":383,"props":{"items":["s1e8dd3b6ce9c","s1f8dd3b6d04f"]},"keys":[{"at":103822,"x":428,"y":174.9,"opacity":1,"curve":0.25},{"at":104252,"x":250.6,"y":232.57,"opacity":1},{"at":104552,"opacity":0}],"end":104552},
-{"id":"s95a309e3ce53","kind":"label","props":{},"keys":[{"at":104575,"x":520,"y":604,"opacity":1,"fill":"Ink","text":"The old leader returns as a follower: it sees a higher term.","role":"caption"}]},
+{"id":"s95a309e3ce53","kind":"label","props":{},"keys":[{"at":104575,"x":520,"y":40,"opacity":1,"fill":"Ink","text":"The old leader returns as a follower: it sees a higher term.","role":"caption"}]},
 {"id":"s418dd7da09a3","kind":"icon","props":{"size":32},"keys":[{"at":104635,"x":0,"y":0,"scale":0.625,"opacity":1,"stroke":"Ink","icon":"mail"}],"end":105605},
 {"id":"s408dd7da07f0","kind":"label","props":{},"keys":[{"at":104635,"x":0,"y":-33,"opacity":0,"fill":"Ink","text":"Heartbeat","role":"caption"},{"at":104755,"opacity":1},{"at":104835,"opacity":1},{"at":105135,"opacity":0}],"end":105605},
 {"id":"s438dd7da0d09","kind":"group","msg":384,"props":{"items":["s418dd7da09a3","s408dd7da07f0"]},"keys":[{"at":104635,"x":612,"y":174.9,"opacity":1,"curve":0.25},{"at":105305,"x":789.4,"y":232.57,"opacity":1},{"at":105605,"opacity":0}],"end":105605},
