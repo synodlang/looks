@@ -40,17 +40,14 @@ when (sim.Added n)
     set above to row
     look.Reveal row
 
-# A change is written beside the card and joined to it by a line, then fades
+# A change is written beside the card, then fades; a node shows one note at a time
 when (sim.Changed f of n from old to new)
-  draw (look.Label (text.Join {(text.From f), ": ", (text.From new)})) as note
+  draw (look.Label (text.Join {(text.From f), ": ", (text.From new)})) as note for n
   look.Role note as "caption"
   look.Place note beside (card of n)
-  draw (look.Line from note to (card of n)) as leader
-  look.Stroke leader with theme.Quiet
   look.Reveal note
   after 1200ms
     look.Remove note
-    look.Remove leader
 
 # A message is a little envelope with its type written above
 when (net.Sent m from a to b)
