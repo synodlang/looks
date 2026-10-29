@@ -60,7 +60,6 @@ when (net.Sent m from a to b)
   look.Tween "count" of (total of "total") to (net.Id m) over 200ms
 
 when (net.Arrived m from a to b)
-  look.Effect "ripple" on (card of b)
   look.Remove (particle of (net.Id m))
 
 when (net.Dropped m from a to b because r)

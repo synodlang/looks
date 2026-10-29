@@ -56,7 +56,7 @@ every look and theme.
 
 | Package | What it draws |
 | --- | --- |
-| `lumen` | A ring of cards drawn on, state rows that pop in, glowing particles that fly on bent paths with a trail, ripples on arrival, flashes on loss, a rolling message counter, a framed warning when a rule breaks, camera pushes at start and end. Best with a dark theme; node cards are nicest with `NodeShape "circle"` and `NodeFill "outline"` as in `chalk`. |
+| `lumen` | A ring of cards drawn on, state rows that pop in, glowing particles that fly on bent paths with a trail, flashes on loss, a rolling message counter, a framed warning when a rule breaks, camera pushes at start and end. Best with a dark theme; node cards are nicest with `NodeShape "circle"` and `NodeFill "outline"` as in `chalk`. |
 | `doodle` | Thin and minimal: a stick-figure head over each card, envelopes for messages (a cross when lost), dashed outlines for crashes and partitions, changes written beside the card. Best with `sketch`. |
 
 ## Themes
